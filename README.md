@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![RedTeam_Network_Diagram (https://github.com/nzimiros/project-1/blob/main/Diagrams/RedTeam_Network_Diagram.png)] 
+![RedTeam_Network_Diagram (https://github.com/nzimiros/project-1/blob/main/Diagrams/RedTeam%20Network%20Diagram%20.png)] 
 (Images/RedTeam_Network_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the install_elk.yaml file may be used to install only certain pieces of it, such as Filebeat.
@@ -150,12 +150,14 @@ Copy the configuration file to ansible
 Update the hosts file to include the private address 
 - #add hosts  of VMs to use be used by containters to /etc/ansible/hosts
 - nano /etc/ansible/hosts
+```sh
 	- [webservers]
 	- 10.0.0.5
 	- 10.0.0.6
 	- 10.0.0.7
 	- [Elk]
 	- 10.1.0.4
+```
 Run the playbook, and navigate to http://10.1.0.4:5601 (this is the address of Kibana) to check that the installation worked as expected.
 - cd /etc/ansible
 - ansible-playbook install_elk.yml Elk
