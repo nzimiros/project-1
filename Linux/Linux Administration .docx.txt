@@ -1,5 +1,5 @@
 ﻿Sandra Nzimiro
-## Week 4 Homework Submission File: Linux Systems Administration
+Linux Systems Administration
 
 
 ### Step 1: Ensure/Double Check Permissions on Sensitive Files

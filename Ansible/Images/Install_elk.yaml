@@ -1,0 +1,44 @@
+  GNU nano 4.8                                                                                  install_elk.yaml                                                                                            
+---
+
+- hosts: Elk
+  become: yes
+  tasks:
+
+    - name: install docker
+      apt:
+        name: docker.io
+        update_cache: yes
+        state: present
+        force_apt_get: yes
+    - name: install pip
+      apt:
+        name: python3-pip
+        state: present
+        force_apt_get: yes
+    - name: install python docker module
+      pip:
+        name: docker
+        state: present
+    - name: more memory
+      sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        reload: yes
+    - name: download and install elk docker container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        published_ports:
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044
+    - name: enable docker service
+      systemd:
+        name: docker
+        enabled: yes
+
+
