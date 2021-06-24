@@ -161,7 +161,7 @@ Update the hosts file to include the private address
 Run the playbook, and navigate to http://10.1.0.4:5601 (this is the address of Kibana) to check that the installation worked as expected.
 - cd /etc/ansible
 - ansible-playbook install_elk.yml Elk
-- ansible-playbook install_filebeat.yml webservers
+- ansible-playbook install_filebeat.yml webservers https://github.com/nzimiros/project-1/blob/main/Ansible/install_filebeat.yml
 - ansible-playbook install_metricbeat.yml webservers https://github.com/nzimiros/project-1/blob/main/Ansible/install_metricbeat.yml
 - wait a few mininutes and type curl http://10.1.0.4:5601 in terminal and it should give an html output
 
